@@ -4,8 +4,8 @@ var request = require('request');
 
 function foo(){
     var rule = new schedule.RecurrenceRule();
-    rule.hour = 7;
-   
+    // rule.hour = 7;
+   rule.minute = 32;
     let quotep = document.querySelector("#quote")
     let quoteauthor = document.querySelector("#quoteauthor");
     var j = schedule.scheduleJob(rule, function(){
