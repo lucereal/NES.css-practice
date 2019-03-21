@@ -36,20 +36,14 @@
         <div class="container">
         <section class="showcase">
           
-             <section class="nes-container with-title is-centered">
+             <section class="nes-container with-title  ">
                 <h3 class="title">David Lucero</h3>
-              <ul class="nav">
+              <ul class="nav justify-content-center">
                 <li class="nav-item">
                   <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  <a class="nav-link nes-text is-success" href="#">Resume</a>
                 </li>
               </ul>
              </section>
@@ -65,13 +59,43 @@
         <!-- Page content -->
         <div class="container">
        
-            <section class="nes-container with-title is-centered">
-                <h3 class="title">Quote Of The Day</h3>
-                <p id="quote">Hi</p>
-
+            <section class="nes-container with-title ">
+                <h3 class="title nes-text is-success">Quote Of The Day</h3>
+                <p id="quote">If things start happening, don't worry,
+                  don't stew, just go right along and you'll start happening too.
+                </p>
+                <footer class="blockquote-footer"> <cite id="quoteauthor" title="Source Title">Dr. Seuss</cite></footer>
                 </section>
+                <section class="nes-container with-title  mt-4" >
+                    <h3 class="title nes-text is-success">About Me</h3>
+                    <p> I am a senior Computer Science Major at Texas Tech University.
+                      I am into Web Development and most things related to programming, 
+                      as long as I can build something AWESOME. 
+                    </p>
+   
+                    </section>
       
-          <button type="button" id="fishbtn"  class="nes-btn is-priamry">Button</button>
+                    <section class="nes-container with-title  mt-4">
+                      <h3 class="title nes-text is-success">Contact Me</h3>
+                      <button type="button" id="emailbtn"  class="nes-btn is-primary"
+                      onclick="document.getElementById('dialog-default').showModal();"
+                      >Email</button>
+                      <dialog class="nes-dialog is-dark" id="dialog-default">
+                          <form method="dialog">
+                              <p class="title">Email Me</p>
+                              <div class="nes-field">
+                                  <label for="name_field">Your Email</label>
+                                  <input type="text" id="name_field" class="nes-input">
+                                </div>
+                                <label for="textarea_field">Textarea</label>
+<textarea id="textarea_field" class="nes-textarea"></textarea>
+                              <menu class="dialog-menu">
+                                <button class="nes-btn">Cancel</button>
+                                <button class="nes-btn is-primary">Send</button>
+                              </menu>
+                            </form>
+                      </dialog>
+                    </section>
          
 
 
