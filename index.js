@@ -40,3 +40,37 @@ emailbtn.addEventListener("click", function(){
    
 })
 
+let sendbtn = document.querySelector("#sendbtn");
+let emailfield = document.querySelector("#emailfield");
+let textfield = document.querySelector("#textfield")
+let dialogsuccess = document.querySelector("#dialog-success");
+
+sendbtn.addEventListener('click', () => {
+    
+    let body = {
+        data: {
+            from: emailfield.value,
+            to: "lucerodavid1010@gmail.com",
+            subject: "",
+            text: textfield.value
+        }
+    }
+    console.log("data:  " + body);
+    let options = {
+        uri: 'https://mrhhkswrhd.execute-api.us-west-2.amazonaws.com/dev/sendEmail',
+        method: 'POST',
+        body:body,
+        json:true
+    }
+    request(options, function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+       console.log(body);
+       if(body === 'success'){
+           dialogsuccess.showModal();
+       }
+    })
+ 
+ 
+})
+

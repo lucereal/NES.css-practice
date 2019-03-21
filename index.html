@@ -85,15 +85,27 @@
                               <p class="title">Email Me</p>
                               <div class="nes-field">
                                   <label for="name_field">Your Email</label>
-                                  <input type="text" id="name_field" class="nes-input">
+                                  <input type="text" id="emailfield" class="nes-input">
                                 </div>
                                 <label for="textarea_field">Textarea</label>
-<textarea id="textarea_field" class="nes-textarea"></textarea>
+                        <textarea id="textfield" class="nes-textarea"></textarea>
                               <menu class="dialog-menu">
+
                                 <button class="nes-btn">Cancel</button>
-                                <button class="nes-btn is-primary">Send</button>
+                                <button id="sendbtn" class="nes-btn is-primary">Send</button>
+                             
                               </menu>
                             </form>
+                      </dialog>
+                      <dialog class="nes-dialog is-dark" id="dialog-success">
+                        
+                          <form method="dialog">
+                        <p class="title">Email Successful</p>
+                        <menu  style="padding-left:0px;"class="dialog-menu row justify-content-center">
+                          <button class="nes-btn">Okay</button>
+                        </menu>
+                        </form>
+                      
                       </dialog>
                     </section>
          
