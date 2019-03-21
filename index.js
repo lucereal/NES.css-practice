@@ -1,25 +1,4 @@
-var schedule = require('node-schedule')
 var request = require('request');
-
-
-function foo(){
-    var rule = new schedule.RecurrenceRule();
-    // rule.hour = 7;
-   rule.minute = 32;
-    let quotep = document.querySelector("#quote")
-    let quoteauthor = document.querySelector("#quoteauthor");
-    var j = schedule.scheduleJob(rule, function(){
-        console.log("new quote!!");
-        request('http://quotes.rest/qod.json', function (error, response, body) {
-            console.log('error:', error); // Print the error if one occurred
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-            var quote = JSON.parse(body).contents.quotes[0]
-            quotep.innerHTML = 'quote.quote';
-            quoteauthor.innerHTML = 'quote.author'
-        });
-    })
-}
-foo();
 
 window.onload = function(){
     console.log("loaded")
@@ -44,6 +23,7 @@ let sendbtn = document.querySelector("#sendbtn");
 let emailfield = document.querySelector("#emailfield");
 let textfield = document.querySelector("#textfield")
 let dialogsuccess = document.querySelector("#dialog-success");
+let subjectfield = document.querySelector("#subjectfield");
 
 sendbtn.addEventListener('click', () => {
     
@@ -51,7 +31,7 @@ sendbtn.addEventListener('click', () => {
         data: {
             from: emailfield.value,
             to: "lucerodavid1010@gmail.com",
-            subject: "",
+            subject: subjectfield.value,
             text: textfield.value
         }
     }
