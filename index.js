@@ -39,7 +39,7 @@ emailbtn.addEventListener("click", function(){
     console.log("email");
     let quotep = document.querySelector("#quote")
     let quoteauthor = document.querySelector("#quoteauthor");
-    request('http://quotes.rest/qod.json', function (error, response, body) {
+    request('https://quotes.rest/qod.json', function (error, response, body) {
         console.log('error:', error); // Print the error if one occurred
         console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         var quote = JSON.parse(body).contents.quotes[0]
