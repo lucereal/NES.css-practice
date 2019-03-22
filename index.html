@@ -22,7 +22,10 @@
 
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <style>
     html,
     body,
@@ -40,58 +43,64 @@
 
 </head>
 
-<body style="background-color: #ADD8E6;">
-
+<body id="body">
   <div class="container my-4">
     <!-- <div class="shadow p-3 mb-5 bg-white rounded"> -->
     <div class="container">
+<div >
+    <ul class="nav justify-content-end">
+        <li class="mr-2">
+            <a id="work" class="nes-btn">Work</a>
+            <script>
+            $("#work").click(function() {
+      $([document.documentElement, document.body]).animate({
+          scrollTop: $("#mywork").offset().top
+      }, 2000);
+  });
+            </script>
+        </li>
+        <li>
+            <a id="contact" class="nes-btn">Contact</a>
+            <script>
+            $("#contact").click(function() {
+      $([document.documentElement, document.body]).animate({
+          scrollTop: $("#contactme").offset().top
+      }, 2000);
+  });
+            </script>
+        </li>
+     
+      </ul>
+</div>
+      <div style="height:100vh; " class=" text-center ">
+        <div style="top:40%; position:relative;">
+          <h1 class="nes-text "" >David Lucero</h1>
+          
+         </div>
+      </div>
+      <div style=" height:100vh; " class=" d-flex justify-content-center align-items-center ">
+          <div  >
+              <a class=" nes-btn " onclick="document.getElementById('dialog-quote').showModal();">Daily
+            Quote</a>
+        </div>
+      </div>
+      <div style="height:100vh; " class="d-flex justify-content-center align-items-center ">
+        <div>
+          <section  class="nes-container with-title  mt-4">
+            <h3  class="title nes-text  ">About Me</h3>
+            <p> I am a senior Computer Science Major at Texas Tech University.
+              I am into Web Development and most things related to programming,
+              as long as I can build something AWESOME.
+            </p>
+
+          </section>
+        </div>
+      </div>
+
       <section class="showcase">
 
-        <section class="nes-container with-title  ">
-          <h3 style="background-color: #ADD8E6;" class="title">David Lucero</h3>
-          <div class="row">
-            <div class="col-6">
-              <ul class="nav ">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link nes-text is-error" href="#">Resume</a>
-                </li>
+        <!-- <section class="nes-container is-rounded mt-4 " style="margin-top: 20vh;"> -->
 
-              </ul>
-            </div>
-            <div class="col-6">
-              <ul class="nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nes-btn is-primary" onclick="document.getElementById('dialog-quote').showModal();">Daily
-                    Quote</a>
-
-                  <dialog class="nes-dialog " id="dialog-quote">
-                    <form method="dialog">
-
-                      <section class="nes-container with-title ">
-                        <h3 class="title nes-text is-success">Quote Of The Day</h3>
-                        <p id="quote">If things start happening, don't worry,
-                          don't stew, just go right along and you'll start happening too.
-                        </p>
-                        <footer class="blockquote-footer"> <cite id="quoteauthor" title="Source Title">Dr. Seuss</cite>
-                        </footer>
-                      </section>
-                      <menu class="dialog-menu">
-
-                        <a onclick="document.getElementById('dialog-quote').close();"
-                          class="nes-btn is-success">Cool</a>
-
-                      </menu>
-                    </form>
-                  </dialog>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </section>
 
 
       </section>
@@ -99,25 +108,37 @@
     <!-- </div> -->
 
   </div>
+  <div class="container">
+    <dialog class="nes-dialog " id="dialog-quote">
+      <form method="dialog">
 
+        <section class="nes-container with-title ">
+          <h3 class="title nes-text is-success">Quote Of The Day</h3>
+          <p id="quote">If things start happening, don't worry,
+            don't stew, just go right along and you'll start happening too.
+          </p>
+          <footer class="blockquote-footer"> <cite id="quoteauthor" title="Source Title">Dr. Seuss</cite>
+          </footer>
+        </section>
+        <menu class="dialog-menu">
+
+          <a onclick="document.getElementById('dialog-quote').close();" class="nes-btn is-success">Cool</a>
+
+        </menu>
+      </form>
+    </dialog>
+  </div>
   <!-- Layout wrapper -->
   <div class="container">
     <!-- Page content -->
     <div class="container">
 
 
-      <section style="background-color: #ADD8E6;" class="nes-container with-title  mt-4">
-        <h3 style="background-color: #ADD8E6;" class="title nes-text  ">About Me</h3>
-        <p> I am a senior Computer Science Major at Texas Tech University.
-          I am into Web Development and most things related to programming,
-          as long as I can build something AWESOME.
-        </p>
 
-      </section>
 
 
       <section class="nes-container with-title  mt-4">
-        <h3 style="background-color: #ADD8E6;" class="title nes-text is-primary">Work</h3>
+        <h3 id="mywork" class="title nes-text is-primary">Work</h3>
         <section class="nes-container is-rounded mt-2">
           <div class="row align-items-center">
 
@@ -136,7 +157,7 @@
 
         </section>
         <section class="nes-container is-rounded mt-4">
-          <div class="card my-3 " style="border: 0; background-color:#ADD8E6;">
+          <div class="card my-3 " style="border: 0; ">
             <div class="row no-gutters">
               <div class="col-md-4  ">
 
@@ -157,7 +178,7 @@
           </div>
 
         </section>
-        <div class="card my-3 " style="border: 0; background-color:#ADD8E6;">
+        <div class="card my-3 " style="border: 0; ">
           <div class="row no-gutters">
             <div class="col-md-4">
 
@@ -178,71 +199,72 @@
         </div>
       </section>
 
-      <section class="nes-container with-title  mt-4">
-        <h3 style="background-color:#ADD8E6;" class="title nes-text ">Contact Me</h3>
-        <div class="row">
-          <div class="col-6">
-            <ul class="nav ">
-              <li>
-                <a id="emailbtn" class="nes-btn is-primary"
-                  onclick="document.getElementById('dialog-default').showModal();">Email</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <ul class="nav justify-content-end">
-              <li class="nav-item mr-3">
-                <a href="https://github.com/lucereal"><i class="nes-icon github is-large"></i></a>
-              </li>
-              <li class="nav-item ">
-                <a href="https://www.linkedin.com/in/david-lucero-710ab3154"><i class="nes-icon linkedin is-large"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+      <div style="height:100vh; " class=" text-center ">
+          <div style="top:40%; position:relative;">
+              <section class="nes-container with-title  mt-4">
+                  <h3 id="contactme" class="title nes-text ">Contact Me</h3>
+                  <div class="row">
+                    <div class="col-6">
+                      <ul class="nav ">
+                        <li>
+                          <a id="emailbtn" class="nes-btn "
+                            onclick="document.getElementById('dialog-default').showModal();">Email</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="nav justify-content-end">
+                        <li class="nav-item mr-3">
+                          <a href="https://github.com/lucereal"><i class="nes-icon github is-large"></i></a>
+                        </li>
+                        <li class="nav-item ">
+                          <a href="https://www.linkedin.com/in/david-lucero-710ab3154"><i class="nes-icon linkedin is-large"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+          
+                </section>
         </div>
+        </div>
+    
 
-        <dialog class="nes-dialog is-dark" id="dialog-default">
-          <form method="dialog">
-            <p class="title">Email Me</p>
-            <div class="nes-field">
-              <label for="emailfield">Your Email</label>
-              <input type="text" id="emailfield" class="nes-input">
+      <dialog class="nes-dialog is-dark" id="dialog-default">
+        <form method="dialog">
+          <p class="title">Email Me</p>
+          <div class="nes-field">
+            <label for="emailfield">Your Email</label>
+            <input type="text" id="emailfield" class="nes-input">
 
-            </div>
-            <div class="nes-field">
-              <label for="subjectfield">Subject</label>
-              <input type="text" id="subjectfield" class="nes-input">
-            </div>
-            <div class="nes-field">
-              <label for="textarea_field">Textarea</label>
-              <textarea id="textfield" class="nes-textarea"></textarea>
-            </div>
-            <menu class="dialog-menu">
+          </div>
+          <div class="nes-field">
+            <label for="subjectfield">Subject</label>
+            <input type="text" id="subjectfield" class="nes-input">
+          </div>
+          <div class="nes-field">
+            <label for="textarea_field">Textarea</label>
+            <textarea id="textfield" class="nes-textarea"></textarea>
+          </div>
+          <menu class="dialog-menu">
 
-              <a onclick="document.getElementById('dialog-default').close();" class="nes-btn is-error">Cancel</a>
-              <a id="sendbtn" class="nes-btn is-primary">Send</a>
+            <a onclick="document.getElementById('dialog-default').close();" class="nes-btn is-error">Cancel</a>
+            <a id="sendbtn" class="nes-btn is-primary">Send</a>
 
-            </menu>
-          </form>
-        </dialog>
-        <dialog class="nes-dialog is-dark" id="dialog-success">
-          <form method="dialog">
-            <p class="title">Email Successful</p>
-            <menu style="padding-left:0px;" class="dialog-menu row justify-content-center">
-              <a onclick="document.getElementById('dialog-success').close();document.getElementById('dialog-default').close(); "
-                class="nes-btn is-primary">Okay</a>
-            </menu>
-          </form>
+          </menu>
+        </form>
+      </dialog>
+      <dialog class="nes-dialog is-dark" id="dialog-success">
+        <form method="dialog">
+          <p class="title">Email Successful</p>
+          <menu style="padding-left:0px;" class="dialog-menu row justify-content-center">
+            <a onclick="document.getElementById('dialog-success').close();document.getElementById('dialog-default').close(); "
+              class="nes-btn is-primary">Okay</a>
+          </menu>
+        </form>
 
-        </dialog>
+      </dialog>
 
-
-
-
-
-
-      </section>
 
 
 
@@ -251,8 +273,27 @@
     <!-- / Page content -->
   </div>
 
+  <a class="nes-btn is-error" id="myBtn" 
+  style="display:none; position:fixed;bottom:20px;right:30px;"
+  >Top</a>
+  <script>
+      $("#myBtn").click(function() {
+$([document.documentElement, document.body]).animate({
+    scrollTop: 0
+}, 1000);
+});
+      </script>
+<script>
+window.onscroll = function() {scrollFunction()};
 
-
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+</script>
 
   <script src="dist/bundle.js"></script>
 
