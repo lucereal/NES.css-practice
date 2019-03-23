@@ -22,10 +22,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <style>
     html,
     body,
@@ -45,194 +43,202 @@
 
 <body id="body">
   <div class="container my-4">
-    <!-- <div class="shadow p-3 mb-5 bg-white rounded"> -->
+    
+    <!-- Container 2-->
     <div class="container">
-<div >
-    <ul class="nav justify-content-end">
-        <li class="mr-2">
+
+      <!-- Navbar -->
+      <div>
+        <ul class="nav justify-content-end">
+          <li class="mr-2">
             <a id="work" class="nes-btn">Work</a>
+
             <script>
-            $("#work").click(function() {
-      $([document.documentElement, document.body]).animate({
-          scrollTop: $("#mywork").offset().top
-      }, 2000);
-  });
+              $("#work").click(function () {
+                $([document.documentElement, document.body]).animate({
+                  scrollTop: $("#mywork").offset().top
+                }, 2000);
+              });
             </script>
-        </li>
-        <li>
+          </li>
+          <li>
             <a id="contact" class="nes-btn">Contact</a>
             <script>
-            $("#contact").click(function() {
-      $([document.documentElement, document.body]).animate({
-          scrollTop: $("#contactme").offset().top
-      }, 2000);
-  });
+              $("#contact").click(function () {
+                $([document.documentElement, document.body]).animate({
+                  scrollTop: $("#contactme").offset().top
+                }, 2000);
+              });
             </script>
-        </li>
-     
-      </ul>
-</div>
+          </li>
+
+        </ul>
+      </div>
+      <!-- /Navbar -->
+
+      <!-- Name -->
       <div style="height:100vh; " class=" text-center ">
         <div style="top:40%; position:relative;">
-          <h1 class="nes-text "" >David Lucero</h1>
+          <h1 class="nes-text " style="color:#4f004d;" >David Lucero</h1>
           
          </div>
       </div>
+      <!-- /Name -->
+
+      <!-- Daily Quote -->
       <div style=" height:100vh; " class=" d-flex justify-content-center align-items-center ">
           <div  >
-              <a class=" nes-btn " onclick="document.getElementById('dialog-quote').showModal();">Daily
+              <a class=" nes-btn " onclick=" document.getElementById('dialog-quote').showModal();">Daily
             Quote</a>
         </div>
       </div>
+      <div class="container">
+        <dialog class="nes-dialog " id="dialog-quote">
+          <form method="dialog">
+
+            <section class="nes-container with-title ">
+              <h3 class="title nes-text is-success">Quote Of The Day</h3>
+              <p id="quote">If things start happening, don't worry,
+                don't stew, just go right along and you'll start happening too.
+              </p>
+              <footer class="blockquote-footer"> <cite id="quoteauthor" title="Source Title">Dr. Seuss</cite>
+              </footer>
+            </section>
+            <menu class="dialog-menu">
+              <a onclick="document.getElementById('dialog-quote').close();" class="nes-btn is-success">Cool</a>
+            </menu>
+          </form>
+        </dialog>
+      </div>
+      <!-- /Daily Quote -->
+
+      <!-- About me -->
       <div style="height:100vh; " class="d-flex justify-content-center align-items-center ">
         <div>
-          <section  class="nes-container with-title  mt-4">
-            <h3  class="title nes-text  ">About Me</h3>
-            <p> I am a senior Computer Science Major at Texas Tech University.
-              I am into Web Development and most things related to programming,
-              as long as I can build something AWESOME.
-            </p>
+          <section class="nes-container with-title  mt-4">
+            <h3 class="title nes-text  ">About Me</h3>
+            <p class="nes-text " style="display: inline;color:#4f004d;">Location:</p> <p style="display: inline;">Lubbock, Texas</p>
+            <br><br>
+            <p class="nes-text" style="display: inline;color:#4f004d;">Primary Experience:</p> <p style="display: inline;"> Web Development, Serverless Backend, NodeJS, and Typescript.</p>
+            <br><br>
+
+            <span>I am a senior Computer Science Major at Texas Tech University.
+              I am into most things related to programming,
+              as long as I can build something <span style="color:#4f004d;">AWESOME.</span>
+            </span>
+
+          </section>
+        </div>
+      </div>
+      <!-- /About me -->
+
+      <!-- Work -->
+      <div class=" text-center ">
+          <div style="top:80%; position:relative;">
+          <section class="nes-container with-title  mt-4">
+            <h3 id="mywork" class="title nes-text is-primary">Work</h3>
+  
+            <!-- Sbcotton -->
+                <div class="card my-3 " style="border: 0; ">
+                  <div class="row no-gutters">
+                    <div class="col-md-4 col-sm-12 col-xs-12 img-responsive text-center">
+                        <!-- <img class="col-md-4 col-sm-4 col-xs-12 img-responsive" src="assets/redrider.PNG" alt="project name"> -->
+                      <img class="img-responsive" alt="Gravatar image example" src="./assets/sbcotton.PNG" 
+                      style="image-rendering: pixelated; max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                      <div class="card-body">
+                        <h6 style="font-size: 90%;" class="card-title">Software Builders Cotton Systems</h6>
+                        <p style="font-size:80%;" class="card-text">Current Employer</p>
+                        <p style="font-size:80%;" class="card-text">I build modern websites and data management tools for cotton gins. </p>
+                        <a href="http://sbcotton.com/" class="nes-btn is-success">Website</a>
+                        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- /sbcotton -->
+              <!-- Red Rider-->
+              <div class="card my-3 " style="border: 0; ">
+                <div class="row no-gutters">
+                  <div class="col-md-4 col-sm-12 col-xs-12 img-responsive text-center">
+                      <!-- <img class="col-md-4 col-sm-4 col-xs-12 img-responsive" src="assets/redrider.PNG" alt="project name"> -->
+                    <img class="img-responsive" alt="Gravatar image example" src="./assets/redrider.PNG" 
+                    style="image-rendering: pixelated; max-width: 100%; max-height: 100%;">
+                
+                  </div>
+                  <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="card-body">
+                      <h6 style="font-size: 90%;" class="card-title">Red Rider</h6>
+                      <p style="font-size:80%;" class="card-text">An Android App built to make setting up long distance carpooling easier for Texas Tech Students</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      <a href="https://github.com/lucereal/RedRider" class="nes-btn is-success">Repo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- /Red rider-->
+            <!-- How to manual -->
+            <div class="card my-3 " style="border: 0; ">
+                <div class="row no-gutters" >
+                  <div class="col-md-4 col-sm-12 col-xs-12 img-responsive text-center" >
+                      <!-- <img class="col-md-4 col-sm-4 col-xs-12 img-responsive" src="assets/redrider.PNG" alt="project name"> -->
+                    <img class="img-responsive " alt="Gravatar image example" src="./assets/manualcar.PNG" 
+                    style="image-rendering: pixelated; max-width: 80%; max-height: 80%; top:10%; position:relative;">
+                  </div>
+                  <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="card-body">
+                      <h6 style="font-size: 90%;" class="card-title">How To Drive A Manual Vehicle</h6>
+                      <p style="font-size:80%;" class="card-text">Instructional website for a class assignment.</p>
+                      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      <a href="https://github.com/lucereal/todriveamanualcar" class="nes-btn is-success">Repo</a>
+                      <a href="https://lucereal.github.io/todriveamanualcar/" class="nes-btn is-primary">Demo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /How to manual-->
+          </section>
+        </div>
+      </div>
+      <!-- /Work -->
+
+      <!-- Contact me-->
+      <div style="height:100vh; " class=" text-center ">
+        <div style="top:40%; position:relative;">
+          <section class="nes-container with-title  mt-4">
+            <h3 id="contactme" class="title nes-text ">Contact Me</h3>
+            <div class="row">
+              <div class="col-6">
+                <ul class="nav ">
+                  <li>
+                    <a id="emailbtn" class="nes-btn "
+                      onclick="document.getElementById('dialog-default').showModal();">Email</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="nav justify-content-end">
+                  <li class="nav-item mr-3">
+                    <a href="https://github.com/lucereal"><i class="nes-icon github is-large"></i></a>
+                  </li>
+                  <li class="nav-item ">
+                    <a href="https://www.linkedin.com/in/david-lucero-710ab3154"><i
+                        class="nes-icon linkedin is-large"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
           </section>
         </div>
       </div>
 
-      <section class="showcase">
-
-        <!-- <section class="nes-container is-rounded mt-4 " style="margin-top: 20vh;"> -->
-
-
-
-      </section>
-    </div>
-    <!-- </div> -->
-
-  </div>
-  <div class="container">
-    <dialog class="nes-dialog " id="dialog-quote">
-      <form method="dialog">
-
-        <section class="nes-container with-title ">
-          <h3 class="title nes-text is-success">Quote Of The Day</h3>
-          <p id="quote">If things start happening, don't worry,
-            don't stew, just go right along and you'll start happening too.
-          </p>
-          <footer class="blockquote-footer"> <cite id="quoteauthor" title="Source Title">Dr. Seuss</cite>
-          </footer>
-        </section>
-        <menu class="dialog-menu">
-
-          <a onclick="document.getElementById('dialog-quote').close();" class="nes-btn is-success">Cool</a>
-
-        </menu>
-      </form>
-    </dialog>
-  </div>
-  <!-- Layout wrapper -->
-  <div class="container">
-    <!-- Page content -->
-    <div class="container">
-
-
-
-
-
-      <section class="nes-container with-title  mt-4">
-        <h3 id="mywork" class="title nes-text is-primary">Work</h3>
-        <section class="nes-container is-rounded mt-2">
-          <div class="row align-items-center">
-
-            <img class="nes-avatar is-rounded is-large" alt="Gravatar image example" src="./assets/carpool.jpg"
-              style="image-rendering: pixelated;">
-
-            <p class="nes-text ml-2">Red Rider</p>
-
-
-          </div>
-          <div class="row mt-2">
-            <div class="col">
-              <p>An Android App built to make setting up long distance carpooling easier for Texas Tech Students</p>
-            </div>
-          </div>
-
-        </section>
-        <section class="nes-container is-rounded mt-4">
-          <div class="card my-3 " style="border: 0; ">
-            <div class="row no-gutters">
-              <div class="col-md-4  ">
-
-                <!-- <img class="nes-avatar is-rounded is-large mx-auto  d-block" alt="Gravatar image example" src="./assets/carpool.jpg" style="image-rendering: pixelated;"> -->
-                <a href="#" class="nes-badge">
-                  <span class="is-dark ">REPO</span>
-                </a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </section>
-        <div class="card my-3 " style="border: 0; ">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-
-              <!-- <img class="nes-avatar is-rounded " alt="Gravatar image example" src="./assets/carpool.jpg" style="image-rendering: pixelated;"> -->
-              <a href="#" class="nes-badge">
-                <span class="is-dark ">REPO</span>
-              </a>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div style="height:100vh; " class=" text-center ">
-          <div style="top:40%; position:relative;">
-              <section class="nes-container with-title  mt-4">
-                  <h3 id="contactme" class="title nes-text ">Contact Me</h3>
-                  <div class="row">
-                    <div class="col-6">
-                      <ul class="nav ">
-                        <li>
-                          <a id="emailbtn" class="nes-btn "
-                            onclick="document.getElementById('dialog-default').showModal();">Email</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-6">
-                      <ul class="nav justify-content-end">
-                        <li class="nav-item mr-3">
-                          <a href="https://github.com/lucereal"><i class="nes-icon github is-large"></i></a>
-                        </li>
-                        <li class="nav-item ">
-                          <a href="https://www.linkedin.com/in/david-lucero-710ab3154"><i class="nes-icon linkedin is-large"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-          
-                </section>
-        </div>
-        </div>
-    
 
       <dialog class="nes-dialog is-dark" id="dialog-default">
         <form method="dialog">
-          <p class="title">Email Me</p>
+          <p class="title">Email Me: lucerodavid1010@gmail.com</p>
           <div class="nes-field">
             <label for="emailfield">Your Email</label>
             <input type="text" id="emailfield" class="nes-input">
@@ -243,7 +249,7 @@
             <input type="text" id="subjectfield" class="nes-input">
           </div>
           <div class="nes-field">
-            <label for="textarea_field">Textarea</label>
+            <label for="textarea_field">Body</label>
             <textarea id="textfield" class="nes-textarea"></textarea>
           </div>
           <menu class="dialog-menu">
@@ -265,35 +271,17 @@
 
       </dialog>
 
-
-
+      <!-- /Contact me-->
 
     </div>
+    <!-- /Container 2 -->
 
-    <!-- / Page content -->
   </div>
 
-  <a class="nes-btn is-error" id="myBtn" 
-  style="display:none; position:fixed;bottom:20px;right:30px;"
-  >Top</a>
-  <script>
-      $("#myBtn").click(function() {
-$([document.documentElement, document.body]).animate({
-    scrollTop: 0
-}, 1000);
-});
-      </script>
-<script>
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("myBtn").style.display = "block";
-  } else {
-    document.getElementById("myBtn").style.display = "none";
-  }
-}
-</script>
+  <!-- Scroll top button-->
+  <a class="nes-btn is-error" id="myBtn" style="display:none; position:fixed;bottom:20px;right:30px;">Top</a>
+
 
   <script src="dist/bundle.js"></script>
 
